@@ -7,7 +7,56 @@ import mods.zensummoning.SummoningInfo;
 import mods.zensummoning.MobInfo;
 
 //Summon
-//<zia_technology:reapersythe>.withTag({AttributeModifiers: [{UUIDMost: 6281021151028920416 as long, UUIDLeast: -7623855746756205677 as long, Amount: 60.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}, {UUIDMost: 7902552842540500950 as long, UUIDLeast: -8720338977927135327 as long, Amount: 60.0, Slot: "mainhand", AttributeName: "generic.flyingSpeed", Operation: 0, Name: "generic.flyingSpeed"}, {UUIDMost: 2446501808011035057 as long, UUIDLeast: -4692232019892433379 as long, Amount: 60.0, Slot: "mainhand", AttributeName: "generic.followRange", Operation: 0, Name: "generic.followRange"}]})
+//Solomon
+SummoningDirector.addSummonInfo(
+    SummoningInfo.create()
+        .setCatalyst(<randomthings:eclipsedclock>)
+        .setReagents([<additional_addons:enchantedironingot>*16])
+        .addMob(MobInfo.create()
+            .setMob("thaumcraft:eldritchwarden")
+            .setData({"Health": 350000, 
+            "Attributes":[
+                {"Name":"generic.maxHealth","Base":400000},
+				{"Name":"generic.movementSpeed", "Base":0.51},
+				{"Name":"generic.attackDamage", "Base":200}
+            ],
+                "HandDropChances":[0.9,0.9],
+                "HandItems":[
+                {id:"minecraft:enchanted_book",Count:1, tag:{HideFlags: 2, display: {Lore: ["§d§lTime Warrior", "§7Cost: §a300xp", "§7Used:", "§7- §fTerrasteel Helmet", "§7- §fTerrasteel Chestplate", "§7- §fTerrasteel Leggings", "§7- §fTerrasteel Boots", "", "§d§lMYSTERY BOOKS"], Name: "§eEnchanted Book"}, AttributeModifiers: [{UUIDMost: 5282231135271405616 as long, UUIDLeast: -6243885772184861480 as long, Amount: 200.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}]}},
+                {}],
+                "CustomName":"Solomon",
+				"PersistenceRequired":1,
+				"CustomNameVisible":1
+            }
+            )
+        )
+);
+
+//Gigatix
+SummoningDirector.addSummonInfo(
+    SummoningInfo.create()
+        .setCatalyst(<circuit_resarch:runeofiron>)
+        .setReagents([<additional_addons:enchantedironingot>*4])
+        .addMob(MobInfo.create()
+            .setMob("twilightforest:tower_golem")
+            .setData({"Health": 300000, 
+            "Attributes":[
+                {"Name":"generic.maxHealth","Base":250000},
+				{"Name":"generic.movementSpeed", "Base":0.51},
+				{"Name":"generic.attackDamage", "Base":50}
+            ],
+                "HandDropChances":[0.9,0.9],
+                "HandItems":[
+                {id:"minecraft:enchanted_book",Count:1, tag:{HideFlags: 2, display: {Lore: ["§d§lGigaGravity", "§7Cost: §a300xp", "§7Used:", "§7-§fKnightly Chestplate", "§7-§fKnightly Leggings", "§7-§fKnightly Boots", "§7-§fKnightly Sword", "§7-§fKnightly Shield", "", "§d§lMYSTERY BOOKS"], Name: "§eEnchanted Book"}, AttributeModifiers: [{UUIDMost: 5715172194900659492 as long, UUIDLeast: -4859238986697728624 as long, Amount: 50.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}]}},
+                {}],
+                "CustomName":"Gigatix",
+				"PersistenceRequired":1,
+				"CustomNameVisible":1
+            }
+            )
+        )
+);
+
 //Revenant Zombie2
 SummoningDirector.addSummonInfo(
 	SummoningInfo.create()
@@ -258,18 +307,7 @@ SummoningDirector.addSummonInfo(
             .setData({"Health": 5000, "Attributes":[{"Name":"generic.maxHealth","Base":5000}]})
         )
 );
-
-//alpha_yeti
-SummoningDirector.addSummonInfo(
-    SummoningInfo.create()
-        .setCatalyst(<tconstruct:edible:3>)
-        .setReagents([<twilightforest:alpha_fur>*8])
-        .addMob(MobInfo.create()
-            .setMob("twilightforest:yeti_alpha")
-            .setData({"Health": 5000, "Attributes":[{"Name":"generic.maxHealth","Base":5000}]})
-        )
-);
-
+//Coagulated Blood
 //alpha_yeti
 SummoningDirector.addSummonInfo(
     SummoningInfo.create()

@@ -31,6 +31,17 @@ recipes.remove(<draconicevolution:wyvern_boots>);
 recipes.remove(<draconicevolution:crafting_injector>);
 recipes.remove(<draconicadditions:capacitor_supplier>);
 
+mods.extendedcrafting.TableCrafting.addShaped(4, <contenttweaker:infinitystemcells>, [
+	[null, null, null, <ore:ingotUltimate>, <additional_addons:phaseitems>, <ore:ingotUltimate>, null, null, null], 
+	[null, <appliedenergistics2:material:47>, <stevescarts:modulecomponents:49>, <extendedcrafting:material:40>, <circuit_resarch:ultracircuit>, <extendedcrafting:material:40>, <stevescarts:modulecomponents:49>, <appliedenergistics2:material:47>, null], 
+	[null, <stevescarts:blockmetalstorage:2>, <additional_addons:ultimatebooster>, <additional_addons:blackplutoniumdenseplate>, <ore:ingotOrichalcos>, <additional_addons:blackplutoniumdenseplate>, <additional_addons:ultimatebooster>, <stevescarts:blockmetalstorage:2>, null], 
+	[<ore:ingotUltimate>, <extendedcrafting:material:40>, <additional_addons:blackplutoniumdenseplate>, <circuit_resarch:gaiasoul>, <circuit_resarch:gelidenderiumcrstalmk2>, <circuit_resarch:gaiasoul>, <additional_addons:blackplutoniumdenseplate>, <extendedcrafting:material:40>, <ore:ingotUltimate>], 
+	[<extendedcrafting:material:13>, <zia_technology:revenantviscera>, <ore:ingotOrichalcos>, <circuit_resarch:gelidenderiumcrstalmk2>, <contenttweaker:perfect_starlight>, <circuit_resarch:gelidenderiumcrstalmk2>, <ore:ingotOrichalcos>, <draconicadditions:chaos_crystal_stable>, <extendedcrafting:material:13>], 
+	[<ore:ingotUltimate>, <extendedcrafting:material:40>, <additional_addons:blackplutoniumdenseplate>, <circuit_resarch:gaiasoul>, <circuit_resarch:gelidenderiumcrstalmk2>, <circuit_resarch:gaiasoul>, <additional_addons:blackplutoniumdenseplate>, <extendedcrafting:material:40>, <ore:ingotUltimate>], 
+	[null, <stevescarts:blockmetalstorage:2>, <additional_addons:ultimatebooster>, <additional_addons:blackplutoniumdenseplate>, <ore:ingotOrichalcos>, <additional_addons:blackplutoniumdenseplate>, <additional_addons:ultimatebooster>, <stevescarts:blockmetalstorage:2>, null], 
+	[null, <appliedenergistics2:material:47>, <stevescarts:modulecomponents:49>, <extendedcrafting:material:40>, <circuit_resarch:chaosichor>, <extendedcrafting:material:40>, <stevescarts:modulecomponents:49>, <appliedenergistics2:material:47>, null], 
+	[null, null, null, <ore:ingotUltimate>, <additional_addons:phaseitems>, <ore:ingotUltimate>, null, null, null]
+]);
 
 //Tier1 Crafting 
 
@@ -335,19 +346,6 @@ mods.extendedcrafting.TableCrafting.addShaped(4, <extendedcrafting:compressor>, 
 	[<ore:plateTungsten>, <circuit_resarch:temperioessence>, <ore:compressed3xDustBedrock>, <ore:blockBlackIron>, <ore:blockBlackIron>, <ore:blockBlackIron>, <ore:compressed3xDustBedrock>, <circuit_resarch:temperioessence>, <ore:plateTungsten>], 
 	[<ore:plateTungsten>, <ore:ingotEbonyPsi>, <circuit_resarch:temperioessence>, ER, <ore:ingotEbonyPsi>, ER, <circuit_resarch:temperioessence>, <ore:ingotEbonyPsi>, <ore:plateTungsten>], 
 	[<ore:blockAethium>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:plateTungsten>, <ore:blockAethium>]
-]);
-
-
-mods.extendedcrafting.TableCrafting.addShaped(4, <circuit_resarch:midassword>.withTag({HideFlags: 2, display: {Lore: ["§7Damage:§a +4000", "", "§6§lLEGENDARY SWORD"], Name: "§6§l50m Midas Sword"}, AttributeModifiers: [{UUIDMost: -1089586804265693515 as long, UUIDLeast: -5498021546126968946 as long, Amount: 4000.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}]}), [
-	[null, null, null, null, null, null, null, <ore:goldweave>, <circuit_resarch:gungniringot>], 
-	[null, null, null, null, null, null, <xreliquary:midas_touchstone>, <circuit_resarch:gungniringot>, <ore:goldweave>], 
-	[null, null, null, null, null, <circuit_resarch:attilaingot>, <circuit_resarch:gungniringot>, <xreliquary:midas_touchstone>, null], 
-	[null, null, null, null, <ore:enchanted_gold>, <circuit_resarch:gungniringot>, <circuit_resarch:attilaingot>, null, null], 
-	[null, null, null, <ore:enchanted_gold>, <circuit_resarch:gungniringot>, <ore:enchanted_gold>, null, null, null], 
-	[null, null, <additional_addons:ultimatebooster>, <circuit_resarch:gungniringot>, <ore:enchanted_gold>, null, null, null, null], 
-	[<avaritia:singularity:1>, <additional_addons:ultimatebooster>, <circuit_resarch:gungniringot>, <additional_addons:ultimatebooster>, null, null, null, null, null], 
-	[<avaritia:singularity:1>, <circuit_resarch:midassword>, <additional_addons:ultimatebooster>, null, null, null, null, null, null], 
-	[<minecraft:skull:3>.withTag({ench: [{lvl: 1 as short, id: 84 as short}], HideFlags: 1, SkullOwner: {Id: "86815291-661f-41f8-bfb7-9adc5e81daf3", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNkYzBmZWI3MDAxZTJjMTBmZDUwNjZlNTAxYjg3ZTNkNjQ3OTMwOTJiODVhNTBjODU2ZDk2MmY4YmU5MmM3OCJ9fX0="}]}}, display: {Lore: ["§7The Infinity Crafting Challenge !", "§7Your Very Crazy !", "", "§c§lSPECIAL ITEM"], Name: "§d§lInfinity Crafting Table"}}), <avaritia:singularity:1>, <avaritia:singularity:1>, null, null, null, null, null, null]
 ]);
 
 mods.extendedcrafting.TableCrafting.addShaped(4, <zia_technology:reperdeathsythe>.withTag({HideFlags: 2, display: {Lore: ["§7Damage: §a+4230", "§7Speed: §a+120%", "§7Health:§a +5000", "§7Defence:§c -99999", "", "§6§lLEGENDARY SWORD"], Name: "§6§lReper Death Sythe"}, AttributeModifiers: [{UUIDMost: 1713711364543500153 as long, UUIDLeast: -6579915453823430389 as long, Amount: 1.2, Slot: "mainhand", AttributeName: "generic.movementSpeed", Operation: 1, Name: "generic.movementSpeed"}, {UUIDMost: -2342144736771225965 as long, UUIDLeast: -5002860020145289836 as long, Amount: 4230.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}, {UUIDMost: -3485031244000967904 as long, UUIDLeast: -9213530338967961996 as long, Amount: 5000.0, Slot: "mainhand", AttributeName: "generic.maxHealth", Operation: 0, Name: "generic.maxHealth"}, {UUIDMost: 160795700039142077 as long, UUIDLeast: -6325767380716817341 as long, Amount: -1.0, Slot: "mainhand", AttributeName: "generic.armor", Operation: 1, Name: "generic.armor"}, {UUIDMost: -133206669780500019 as long, UUIDLeast: -5579547305065918576 as long, Amount: -1.0, Slot: "mainhand", AttributeName: "generic.armorToughness", Operation: 1, Name: "generic.armorToughness"}]}), [

@@ -594,7 +594,7 @@ mods.modularmachinery.RecipeBuilder.newBuilder(machineName4 + "REEP", machineNam
 val InfiniteCraftingTable = <minecraft:skull:3>.withTag({ench: [{lvl: 1 as short, id: 84 as short}], HideFlags: 1, SkullOwner: {Id: "86815291-661f-41f8-bfb7-9adc5e81daf3", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNkYzBmZWI3MDAxZTJjMTBmZDUwNjZlNTAxYjg3ZTNkNjQ3OTMwOTJiODVhNTBjODU2ZDk2MmY4YmU5MmM3OCJ9fX0="}]}}, display: {Lore: ["§7The Infinity Crafting Challenge !", "§7Your Very Crazy !", "", "§c§lSPECIAL ITEM"], Name: "§d§lInfinity Crafting Table"}});
 
 mods.modularmachinery.RecipeBuilder.newBuilder(machineName4 + "_ICTF_", machineName4, 100)
-      .addItemInput(<mysticalagriculture:gear:9> * 64)
+      .addItemInput(<contenttweaker:infinitystemcells>)
       .addItemInput(<minecraft:crafting_table> * 64)
       .addItemInput(<draconicevolution:draconic_block> * 64)
       .addItemInput(<extendedcrafting:storage> * 64)

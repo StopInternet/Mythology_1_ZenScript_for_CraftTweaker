@@ -1,0 +1,7 @@
+import mods.rockytweaks.Anvil;
+import crafttweaker.item.IItemStack;
+//mods.rockytweaks.Anvil.addRecipe(, right-input, output, exp-cost);
+//val
+val GoB = <minecraft:enchanted_book>.withTag({display: {Lore: ["§d§lGold Banker", "§7Cost: §a150xp", "§7Used:", "§7- §fMidas Sword", "", "§d§lMYSTERY BOOKS"], Name: "§eEnchanted Book"}});
+val Midas = <circuit_resarch:midassword>.withTag({HideFlags: 2, display: {Lore: ["§7Damage:§a +4000", "§7Health: §a+50%", "§7Speed:§c -50%", "", "§6§lLEGENDARY SWORD"], Name: "§6§l50m Midas Sword"}, AttributeModifiers: [{UUIDMost: -6801821937947948587 as long, UUIDLeast: -8840436415388053795 as long, Amount: 4000.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}, {UUIDMost: 5892119861146439190 as long, UUIDLeast: -5783123319168772762 as long, Amount: 0.5, Slot: "mainhand", AttributeName: "generic.maxHealth", Operation: 1, Name: "generic.maxHealth"}, {UUIDMost: 2233155487787270146 as long, UUIDLeast: -7768018620621894437 as long, Amount: -0.5, Slot: "mainhand", AttributeName: "generic.movementSpeed", Operation: 1, Name: "generic.movementSpeed"}]});
+mods.rockytweaks.Anvil.addRecipe(<circuit_resarch:midassword>, GoB, Midas, 150);

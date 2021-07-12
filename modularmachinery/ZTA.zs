@@ -34,6 +34,14 @@ recipes.addShaped(<modularmachinery:blockoutputbus:3> * 1, [[null, <bloodmagic:o
 var machineName = "dragon_fusion_reactor";
 var machineName1 = "type_zero_assembler";
 
+//aspect
+mods.modularmachinery.RecipeBuilder.newBuilder(machineName1 + "UDEEE2", machineName1, 50)
+      .addItemInput(<extendedcrafting:ender_alternator>*4)
+      .addItemInput(<extendedcrafting:material:40>*8)
+      .addItemOutput(<extrautils2:machine>.withTag({Type: "extrautils2:generator_ender"}))
+      .addEnergyPerTickInput(12005)
+      .build();
+
 //boo
 mods.modularmachinery.RecipeBuilder.newBuilder(machineName1 + "BOO", machineName1, 60)
       .addItemInput(<extrautils2:boomerang>)
