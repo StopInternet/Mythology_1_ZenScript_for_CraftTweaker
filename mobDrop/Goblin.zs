@@ -9,8 +9,8 @@ val Go2 = <entity:moremobss:goblin2>;
 val GP = <minecraft:skull:3>.withTag({SkullOwner: {Id: "67c9ec15-08f7-41e4-8c44-b2d9b02f54ac", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE1ZmQwOWNlYzRmZTk3Y2NjNzc2MjFiNzNkODlhZDZlNDVkNzkzMTE3ZjU3NjU1N2Q2NTM4NDVhY2I0ZjBhZCJ9fX0="}]}}, display: {Lore: ["", "§6§lLEGENDARY ITEMS"], Name: "§6Golden Plate"}});
 val ID = <industrialforegoing:infinity_drill>.withTag({Energy: 0 as long, HideFlags: 2, Fluid: {FluidName: "biofuel", Amount: 0}, display: {Lore: ["§6§lLEGENDARY DRILL"], Name: "§6Infinity Drill DR-X335"}, Special: 0 as byte, Selected: "POOR", AttributeModifiers: [{UUIDMost: 795165902285586753 as long, UUIDLeast: -6424051814869259138 as long, Amount: 1.0, Slot: "mainhand", AttributeName: "generic.attackDamage", Operation: 0, Name: "generic.attackDamage"}]});
 //Drop
-Go1.addPlayerOnlyDrop(MiO % 1.2,1,3);
-Go2.addPlayerOnlyDrop(MiO % 1.2,1,3);
+Go1.addPlayerOnlyDrop(MiO % 4.5,1,4);
+Go2.addPlayerOnlyDrop(MiO % 4.5,1,4);
 //Recipe
 mods.thermalexpansion.InductionSmelter.addRecipe(<thermalfoundation:material:136>*3, MiO, <minecraft:gold_ingot>, 1700, <thermalfoundation:material:865>, 20);
 mods.botania.Brew.removeRecipe("haste");

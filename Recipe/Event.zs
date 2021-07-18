@@ -5,6 +5,7 @@ import crafttweaker.event.IPlayerEvent;
 import crafttweaker.event.PlayerLeftClickBlockEvent;
 import crafttweaker.event.EntityLivingAttackedEvent;
 import crafttweaker.event.PlayerRightClickItemEvent;
+import mods.thaumcraft.Infusion;
 
 //val
 val GoldenZombiePigmanHead = <minecraft:skull:3>.withTag({HideFlags: 2, SkullOwner: {Id: "edcabed9-a190-4172-b5ed-c93ec86bc03e", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzZhMzNhOTdkNGVkNTI3OTkxZDAzYmZmNDM3YzNjMWQ3ZWE3OWNjZGYxNDdmYmU0NjlmZDZhMDMxZjc5MWFlMCJ9fX0="}]}}, display: {Lore: ["§7Drops at a rate of 1,842%", "§7when the Zombie Pigman is defeated.", "§7Looks like a skeleton's head dyed gold.", "", "§c§lSPECIAL ITEM"], Name: "§cGolden Zombie Pigman Head"}, AttributeModifiers: [{UUIDMost: 5779728475065634255 as long, UUIDLeast: -9216302893992988861 as long, Amount: 0.0, AttributeName: "generic.movementSpeed", Operation: 0, Name: "generic.movementSpeed"}, {UUIDMost: 2485860826442384664 as long, UUIDLeast: -4685219401524134339 as long, Amount: 0.0, AttributeName: "generic.knockbackResistance", Operation: 0, Name: "generic.knockbackResistance"}]});
@@ -51,3 +52,42 @@ events.onPlayerRightClickItem(function (event as crafttweaker.event.PlayerRightC
 }
 );
 
+//Insence Singularity 
+val isii = <singularities:singularity:40>.withTag({HideFlags: 6, display: {Lore: ["§dOffhand Ability", "§7Damage: §a+100%", "§7Health:§a +100%", "", "§6Ability: All for One §e§lRIGHT CLICK", "§7All good incense can be empowering.", "§7List:", "§9Speed 3, Regeneration 3,Jump Boost 3, Resistance 3", "§9Stregth 3, Water Breathing, Fire Resistance, Haste 3", "§9Night Vision, Invisibility, Warp Ward", "§9Flight, Saturation ", "", "§6§lLEGENDARY INCENSE"], Name: "§6Incense Singularity"}, AttributeModifiers: [{UUIDMost: 5816393277770648393 as long, UUIDLeast: -8004795644335446566 as long, Amount: 1.0, Slot: "offhand", AttributeName: "generic.maxHealth", Operation: 1, Name: "generic.maxHealth"}, {UUIDMost: -843335915200099744 as long, UUIDLeast: -8202795302385273457 as long, Amount: 1.0, Slot: "offhand", AttributeName: "generic.attackDamage", Operation: 1, Name: "generic.attackDamage"}]});
+val nulll = <botania:incensestick>.withTag({ench: [{lvl: 1 as short, id: 31 as short}], HideFlags: 1, display: {Lore: ["§aException§e in§f thread §c\"main\"§f java.lang.§aNullPointerException", "§fat§a NullPointerExceptionSample§f.main(§aNullPointerExceptionSample§f.java:§c4)", "", "§8§lNULL INCENSE"], Name: "§8Null Incense Stick"}});
+mods.extendedcrafting.TableCrafting.addShapeless(4, nulll, [<extendedcrafting:singularity_ultimate>,
+<botania:incensestick>.withTag({brewKey: "strength"}),
+<botania:incensestick>.withTag({brewKey: "speed"}),
+<botania:incensestick>.withTag({brewKey: "jumpBoost"}),
+<botania:incensestick>.withTag({brewKey: "waterBreathing"}),
+<botania:incensestick>.withTag({brewKey: "regen"}),
+<botania:incensestick>.withTag({brewKey: "nightVision"}),
+<botania:incensestick>.withTag({brewKey: "fireResistance"}),
+<botania:incensestick>.withTag({brewKey: "resistance"}),
+<botania:incensestick>.withTag({brewKey: "invisibility"}),
+<botania:incensestick>.withTag({brewKey: "haste"}),
+<draconicadditions:chaos_crystal_stable>
+]);
+events.onPlayerRightClickItem(function (event as crafttweaker.event.PlayerRightClickItemEvent)
+{ 
+    var ISI = <singularities:singularity:40>.withTag({HideFlags: 6, display: {Lore: ["§dOffhand Ability", "§7Damage: §a+100%", "§7Health:§a +100%", "", "§6Ability: All for One §e§lRIGHT CLICK", "§7All good incense can be empowering.", "§7List:", "§9Speed 3, Regeneration 3,Jump Boost 3, Resistance 3", "§9Stregth 3, Water Breathing, Fire Resistance, Haste 3", "§9Night Vision, Invisibility, Warp Ward", "§9Flight, Saturation ", "", "§6§lLEGENDARY INCENSE"], Name: "§6Incense Singularity"}, AttributeModifiers: [{UUIDMost: 5816393277770648393 as long, UUIDLeast: -8004795644335446566 as long, Amount: 1.0, Slot: "offhand", AttributeName: "generic.maxHealth", Operation: 1, Name: "generic.maxHealth"}, {UUIDMost: -843335915200099744 as long, UUIDLeast: -8202795302385273457 as long, Amount: 1.0, Slot: "offhand", AttributeName: "generic.attackDamage", Operation: 1, Name: "generic.attackDamage"}]});
+
+    if(ISI.matches(event.item))
+{
+    event.player.addPotionEffect(<potion:minecraft:jump_boost>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:night_vision>.makePotionEffect(20000000, 0));
+    event.player.addPotionEffect(<potion:minecraft:strength>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:speed>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:resistance>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:invisibility>.makePotionEffect(20000000, 0));
+    event.player.addPotionEffect(<potion:minecraft:water_breathing>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:saturation>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(20000000, 2));
+    event.player.addPotionEffect(<potion:minecraft:fire_resistance>.makePotionEffect(20000000, 0));
+    event.player.addPotionEffect(<potion:bloodmagic:flight>.makePotionEffect(20000000, 0));
+    event.player.addPotionEffect(<potion:thaumcraft:warpward>.makePotionEffect(20000000, 0));
+    }
+}
+);
+
+mods.thaumcraft.Infusion.registerRecipe("IS", "", isii, 50, [<aspect:ignis>*256], nulll, [<contenttweaker:infinitystemcells>,<contenttweaker:infinitystemcells>,<contenttweaker:infinitystemcells>,<contenttweaker:infinitystemcells>]);
