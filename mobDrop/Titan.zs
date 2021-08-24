@@ -1,0 +1,4 @@
+//mobdrop
+val ti = <entity:twilightforest:armored_giant>;
+val tib = <minecraft:writable_book>.withTag({ench: [{lvl: 1 as short, id: 54 as short}], pages: ["AW"], HideFlags: 3, display: {Lore: ["§7Defence: §a+100 (Offhand)", "", "§7This scroll is used to make a", "§7very large weapon stronger. ", "§7When you defeat the giants,", "§7they will drop the scrolls.", "", "§7Drop: (§c10%§7)", "§aTF-Armored Giant", "", "§6§lLEGENDARY ITEM"], Name: "§6Titan Scroll"}, AttributeModifiers: [{UUIDMost: 7323587375183121501 as long, UUIDLeast: -8123218263704340309 as long, Amount: 100.0, Slot: "offhand", AttributeName: "generic.armor", Operation: 0, Name: "generic.armor"}, {UUIDMost: 3095961466916456352 as long, UUIDLeast: -6378401659615893801 as long, Amount: 100.0, Slot: "offhand", AttributeName: "generic.armorToughness", Operation: 0, Name: "generic.armorToughness"}]});
+ti.addDrop(tib % 10,1,16);

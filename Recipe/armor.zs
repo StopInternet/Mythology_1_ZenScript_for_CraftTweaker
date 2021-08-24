@@ -178,3 +178,4 @@ recipes.addShaped(<projecte:item.pe_dm_armor_1> * 1, [[<projecte:item.pe_matter:
 // Dark Matter Boots
 recipes.remove(<projecte:item.pe_dm_armor_0>);
 recipes.addShaped(<projecte:item.pe_dm_armor_0> * 1, [[null, null, null], [<projecte:item.pe_matter:0>, null, <projecte:item.pe_matter:0>],[<projecte:item.pe_matter:0>, <mysticalagriculture:supremium_boots>, <projecte:item.pe_matter:0>]]);
+

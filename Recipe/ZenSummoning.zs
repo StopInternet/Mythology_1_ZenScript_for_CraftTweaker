@@ -4,10 +4,119 @@ import mods.zensummoning.SummoningDirector;
 import mods.zensummoning.SummoningAttempt;
 import mods.zensummoning.SummoningInfo;
 import mods.zensummoning.MobInfo;
+import crafttweaker.player.IPlayer;
+import crafttweaker.command.ICommand;
+import crafttweaker.command.ICommandManager;
+import crafttweaker.event.PlayerTickEvent;
+import crafttweaker.event.EntityLivingDeathEvent;
+import crafttweaker.damage.IDamageSource;
+import crafttweaker.event.PlayerRightClickItemEvent;
+
 //val
 val RTT = <extrabotany:material:6>.withTag({display: {Lore: ["§7Summon the Twilight Boss", "", "§7Status:", "§7HP:§a 100,000", "§7Damage: §a150", "", "§7Drop:", "§7- Lich: §6Scepter of Infinity Fortification", "§7- Naga: Miniature Naga Courtyard", "§7- Ur-Ghast: §5Refined Salamander`s Eye", "§7- Alpha Yeti: §6Alpha Fishing Sword", "§7- Snow Queen: §9Health Ball", "", "§c§lSPECIAL ITEMS"], Name: "§cRefined Twilight Boss Ticket"}});
 //Summon
-////Crafter Sans
+//<minecraft:skull:3>.withTag({SkullOwner: {Id: "3e7d42f3-7abc-45e3-8c68-4670da688924", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIwMWFlMWE4YTA0ZGY1MjY1NmY1ZTQ4MTNlMWZiY2Y5Nzg3N2RiYmZiYzQyNjhkMDQzMTZkNmY5Zjc1MyJ9fX0="}]}}, display: {Lore: ["§7Drop: §aThe Void", "", "§c§lVOID ITEMS"], Name: "§5Void Dust"}})
+
+//The Titan
+//<minecraft:skull:3>.withTag({ench: [{lvl: 1 as short, id: 54 as short}, {lvl: 1 as short, id: 88 as short}, {lvl: 1 as short, id: 31 as short}], HideFlags: 5, SkullOwner: {Id: "8755c3f1-3c51-4bf1-a264-dc588a6bade0", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM1NjdhYzM1NjMwMjU4MzE0N2Y0NjRhZjIxZGNiNWQ3ZWJjYjIyYWFiMjg0NzU1NGM3OWI3NTFmNWJmNDgifX19"}]}}, display: {Lore: ["§7Drop: §aThe Titan (§dCrazy Rare Drop§a)", "", "§6§lLEGENDARY ITEM"], Name: "§6Judgement Core"}})
+SummoningDirector.addSummonInfo(
+    SummoningInfo.create()
+        .setCatalyst(<extrabotany:material:6>.withTag({display: {Lore: ["§7Summon the The Titan", "", "§7Status:", "§7HP:§a 150,0000", "§7Damage: §a1500", "§7Speed: §a+5", "", "§7Drop:", "§7- §6Titan Scroll", "§7- Giant Sword", "§7- §6Judgement Core §7(§dCRD§7)", "", "§c§lSPECIAL ITEMS"], Name: "§cThe Titan Ticket"}}))
+        .setReagents([<avaritia:singularity>])
+        .addMob(MobInfo.create()
+            .setMob("twilightforest:armored_giant")
+            .setData({"Health": 1500000, 
+            "Attributes":[
+                {"Name":"generic.maxHealth","Base":1500000},
+				{"Name":"generic.movementSpeed", "Base":0.5},
+				{"Name":"generic.attackDamage", "Base":1500}
+            ],
+                "ArmorDropChances":[0.0f, 0.0f, 0.0f, 0.05f],
+                "ArmorItems":[{},{},{},{id:"minecraft:skull:3",Count: 1,tag:{ench: [{lvl: 1 as short, id: 54 as short}, {lvl: 1 as short, id: 88 as short}, {lvl: 1 as short, id: 31 as short}], HideFlags: 5, SkullOwner: {Id: "8755c3f1-3c51-4bf1-a264-dc588a6bade0", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM1NjdhYzM1NjMwMjU4MzE0N2Y0NjRhZjIxZGNiNWQ3ZWJjYjIyYWFiMjg0NzU1NGM3OWI3NTFmNWJmNDgifX19"}]}}, display: {Lore: ["§7Drop: §aThe Titan (§dCrazy Rare Drop§a)", "", "§6§lLEGENDARY ITEM"], Name: "§6Judgement Core"}}}],
+                "CustomName":"The Titan",
+				"PersistenceRequired":1,
+				"CustomNameVisible":1
+            }
+            )
+        )
+                .setMutator(function (attempt as SummoningAttempt) {
+            if (attempt.world.raining) {
+                attempt.success = false;
+                attempt.message = "Can't summon this in the rain!";
+            } 
+            else{
+                attempt.message = "ghooooooooo!!!!";
+            }
+        })
+);
+
+//The Void
+val SoulP = <minecraft:ender_pearl>.withTag({ench: [{lvl: 1 as short, id: 54 as short}, {lvl: 1 as short, id: 88 as short}, {lvl: 1 as short, id: 225 as short}, {lvl: 1 as short, id: 31 as short}], HideFlags: 1, display: {Lore: ["§6Ability: §e§lRIGHTCLICK", "§7You can break the curse of The Void.", "§7You can't break it without it.", "", "§c§lSPECIAL ITEM"], Name: "§cSoul Pearl"}});
+SummoningDirector.addSummonInfo(
+    SummoningInfo.create()
+        .setCatalyst(<extrabotany:material:6>.withTag({display: {Lore: ["§7Summon the The Void", "", "§7Status:", "§7HP:§a 666,666, 200,000", "§7Damage: §a666, 1000", "§7Speed: §a+5", "", "§7Drop:", "§7- §6§5Void Dust §7x2", "", "§6Ability:", "§71. Erase blocks in a 5-block ", "§7radius of the player.", "", "§72, Disables the Kikoku.", "", "§73, Can be removed by defeating ", "§7the Soul Zombie and using the Soul Pearl.", "", "§c§lSPECIAL ITEMS"], Name: "§cThe Void Ticket"}}))
+        .setReagents([<minecraft:skull:3>.withTag({SkullOwner: {Id: "ebff27c6-c590-48c7-9b6e-6174ff79faa6", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzhiZThhYmQ2NmQwOWE1OGNlMTJkMzc3NTQ0ZDcyNmQyNWNhZDdlOTc5ZThjMjQ4MTg2NmJlOTRkM2IzMmYifX19"}]}}, display: {Lore: ["§6§lLEGENDARY"], Name: "§6Tesselated Ender Pearl"}})])
+        .addMob(MobInfo.create()
+            .setMob("minecraft:silverfish")
+            .setData({"Health": 200000, 
+            "Attributes":[
+                {"Name":"generic.maxHealth","Base":200000},
+				{"Name":"generic.movementSpeed", "Base":0.5},
+				{"Name":"generic.attackDamage", "Base":1000}
+            ],
+                "ArmorDropChances":[0.0f, 0.0f, 0.0f, 0.9f],
+                "ArmorItems":[{},{},{},{id:"minecraft:skull:3",Count: 1,tag:{SkullOwner: {Id: "3e7d42f3-7abc-45e3-8c68-4670da688924", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIwMWFlMWE4YTA0ZGY1MjY1NmY1ZTQ4MTNlMWZiY2Y5Nzg3N2RiYmZiYzQyNjhkMDQzMTZkNmY5Zjc1MyJ9fX0="}]}}, display: {Lore: ["§7Drop: §aThe Void", "", "§c§lVOID ITEMS"], Name: "§5Void Dust"}}}],
+                "ActiveEffects":[{"Id":24,"Amplifier":1,"Duration":999999,"ShowParticles":1},
+                {"Id":14,"Amplifier":1,"Duration":9999999,"ShowParticles":1}],
+                "CustomName":"Void Fish",
+				"PersistenceRequired":1,
+				"CustomNameVisible":1,
+                "Passengers":[{"id":"enderman",
+                               "CustomName":"The Void",
+                               "Attributes":[
+                              {"Name":"generic.maxHealth","Base":666666},
+				              {"Name":"generic.movementSpeed", "Base":0.6},
+				              {"Name":"generic.attackDamage", "Base":666}],
+                               "ArmorDropChances":[0.0f, 0.0f, 0.0f, 0.9f],
+                               "ArmorItems":[{},{},{},{id:"minecraft:skull:3",Count: 1,tag:{SkullOwner: {Id: "3e7d42f3-7abc-45e3-8c68-4670da688924", Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjIwMWFlMWE4YTA0ZGY1MjY1NmY1ZTQ4MTNlMWZiY2Y5Nzg3N2RiYmZiYzQyNjhkMDQzMTZkNmY5Zjc1MyJ9fX0="}]}}, display: {Lore: ["§7Drop: §aThe Void", "", "§c§lVOID ITEMS"], Name: "§5Void Dust"}}}],
+                               }]
+            }
+            )
+        )
+        .addMob(MobInfo.create()
+            .setMob("minecraft:zombie")
+            .setData({"Health": 100, 
+            "Attributes":[
+                {"Name":"generic.maxHealth","Base":100},
+				{"Name":"generic.movementSpeed", "Base":0.51},
+				{"Name":"generic.attackDamage", "Base":200}
+            ],
+            "ArmorDropChances":[0.0f, 0.0f, 0.0f, 1.0f],
+            "ArmorItems":[{},{},{},{id:"enderio:item_end_steel_helmet",Count: 1}],   
+            "ActiveEffects":[{"Id":24,"Amplifier":1,"Duration":999999,"ShowParticles":1},
+                {"Id":14,"Amplifier":1,"Duration":9999999,"ShowParticles":1}],
+                "HandDropChances":[1.0f,1.0f],
+                "HandItems":[
+                {id:"minecraft:ender_pearl",Count:16, tag:{ench: [{lvl: 1 as short, id: 54 as short}, {lvl: 1 as short, id: 88 as short}, {lvl: 1 as short, id: 225 as short}, {lvl: 1 as short, id: 31 as short}], HideFlags: 1, display: {Lore: ["§6Ability: §e§lRIGHTCLICK", "§7You can break the curse of The Void.", "§7You can't break it without it.", "", "§c§lSPECIAL ITEM"], Name: "§cSoul Pearl"}}},
+                {}],
+                "CustomName":"Soul Zombie",
+				"PersistenceRequired":1,
+				"CustomNameVisible":1
+            }
+            )
+        )
+        .setMutator(function (attempt as SummoningAttempt) {
+            if (attempt.world.raining) {
+                attempt.success = false;
+                attempt.message = "Can't summon this in the rain!";
+            } 
+            else{
+        }            
+    }
+        )
+);
+
+//Crafter Sans
 SummoningDirector.addSummonInfo(
     SummoningInfo.create()
         .setCatalyst(<extrabotany:material:6>.withTag({display: {Lore: ["§7Summon the Crafter Sans", "", "§7Status:", "§7HP:§a 99,9999", "§7Damage: §a15,000", "§7Speed: §a+5.5", "", "§6Ability: Freezing Ice, Scorching Flame", "§7It can swim quickly in water, turn water ", "§7into freeze, and make molten rock solid.", "", "§7Drop:", "§7-§5 Bone of the Sans", "§7- Leather Tunic", "§7- §cSword of the Cosmos", "", "§c§lSPECIAL ITEMS"], Name: "§cCrafter Sans Ticket"}}))
