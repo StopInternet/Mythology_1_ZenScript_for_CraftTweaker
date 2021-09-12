@@ -21,3 +21,14 @@ sf.maxStackSize = 1;
 sf.rarity = "epic";
 sf.toolClass = "sword";
 sf.register();
+
+//voidpearl (green, industrial machine chassis)
+var void_pearl = VanillaFactory.createItem("void_pearl");
+void_pearl.maxStackSize = 16;
+void_pearl.rarity = "epic";
+void_pearl.register();
+
+var judgement_core = VanillaFactory.createItem("judgement_core");
+judgement_core.maxStackSize = 1;
+judgement_core.rarity = "epic";
+judgement_core.register();
